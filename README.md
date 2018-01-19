@@ -1,21 +1,32 @@
-# imoocmall
+# 基于Vue2.0 + vue-router + webpack + ES6/7 + nodejs + express 实现web端购物商城网站
 
-> wcd vue-ImoocMall
+Project startup time is 2018/01/19（[WuChenDi](https://github.com/WuChenDi)）
 
-## Build Setup
+## 前端构架
+***
+- 页面结构(H5,CSS3,原生JS)
+- 框架(基于Vue脚手架:vue-cli)进行搭建
+- 数据请求处理框架(vue-resource或者Axios)
+- Vue-Router进行路由处理
+- ....
 
-``` bash
-# install dependencies
-npm install
+## 项目已实现功能
+***
+1. 首页数据的展示
+2. ...
 
-# serve with hot reload at localhost:8080
+## 项目运行
+***
+通过npm安装本地服务第三方依赖模块(需要已安装[Node.js](https://nodejs.org/))
+#### 注意：由于涉及大量的 ES6/7 等新属性，node 需要 6.0 以上版本 
+```
+cd vue-shop
+
+npm install 或 cnpm install(个人比较喜欢使用后者，下载依赖模块速度较快)
+
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
+## 总结
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+- 了解vue...
