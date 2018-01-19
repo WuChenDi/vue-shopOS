@@ -25,31 +25,68 @@
       msg: ''
     },
     mounted: function () {
+      // 请求前拦截
+      axios.interceptors.request.use(function (config) {
+        console.log("request init.");
 
+        return config;
+      })
+      // 请求后拦截
+      axios.interceptors.response.use(function (response) {
+        console.log("response init.");
+
+        return response;
+      })
     },
     methods: {
       get: function () {
-        axios.get("./../../package.json",{
-          params:{
+        axios.get("./../../package.json", {
+          params: {
             userId: "999"
           },
-          headers:{
-            token:"wcd"
+          headers: {
+            token: "wcd"
           },
-          before: function(){
+          before: function () {
             console.log("before init.");
           }
         }).then(res => {
           this.msg = res.data;
         }).catch(function (error) {
-          console.log("error init.");
+          console.log("error init." + error);
         })
       },
       post: function () {
-
+        axios.post("./../../package.json", {
+          userId: "888"
+        }, {
+          headers: {
+            token: "dcw"
+          }
+        }).then(res => {
+          this.msg = res.data;
+        }).catch(function (error) {
+          console.log("error init." + error);
+        })
       },
       http: function () {
-
+        axios({
+          url: "./../../package.json",
+          method: "get",
+          data: {
+            userId: "101"
+          },
+          params:{
+            userId: "102"
+          },
+          headers: {
+            token: "http-test"
+          }
+        }).then(res => {
+          this.msg = res.data;
+        }).catch(function (error) {
+          console.log("error init." + error);
+        })
       }
     }
   })
