@@ -1,6 +1,6 @@
 # 基于Vue2.0 + vue-router + webpack + ES6/7 + nodejs + express 实现web端(响应式)购物商城网站
 
-Project startup time is 2018/01/19（[WuChenDi](https://github.com/WuChenDi)）
+Project startup time is January 19, 2018（[WuChenDi](https://github.com/WuChenDi)）
 
 ## 前端构架
 ***
