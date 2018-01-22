@@ -1,6 +1,7 @@
 'use strict'
 const utils = require('./utils')
 const webpack = require('webpack')
+const express = require('express')
 const config = require('../config')
 const merge = require('webpack-merge')
 const path = require('path')
@@ -11,59 +12,69 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
 //添加mock数据
-/*const express = require('express')
-const app = express()
-var appData = require('./../mock/goods.json')
-var apiRoutes = express.Router()
-app.use('/api',apiRoutes)*/
 
-var express = require('express')
-var app = express()
-var router = express.Router();
+const app = express()
+var apiRouter = express.Router();
 var goodsData = require('./../mock/goods.json');
-router.get("/goods", function (req, res, next) {
+apiRouter.get('/goods', function (req, res, next) {
+  // console.log(goodsData);
   res.json(goodsData);
 });
 app.use(router);
 
-router.get('/',function(req,res){
+apiRouter.get('/',function(req,res){
   res.send('hello world')
 })
 
-app.listen(3000,function () {
-  console.log('Ready');
+app.listen(config.dev.port + 1,function () {
+  console.log('Ready')
 })
 
 // express
-/*var express = require('express')
-var apiServer = express()
-var bodyParser = require('body-parser')
-apiServer.use(bodyParser.urlencoded({ extended: true }))
-apiServer.use(bodyParser.json())
-var apiRouter = express.Router()
-var fs = require('fs')
-apiRouter.route('/:apiName')
-.all(function (req, res) {
-  fs.readFile('./../mock/goods.json', 'utf8', function (err, data) {
-    if (err) throw err
-    var data = JSON.parse(data)
-    if (data[req.params.apiName]) {
-      res.json(data[req.params.apiName])
-    } else {
-      res.send('no such api name')
-    }
-  })
-})
-
-apiServer.use('/api', apiRouter);
-apiServer.listen(config.dev.port + 1, function (err) {
-  if (err) {
-    console.log(err)
-    return
-  }
-  console.log('Listening at http://localhost:' + (config.dev.port + 1) + '\n')
-})*/
+// var apiServer = express()
+// var bodyParser = require('body-parser')
+// apiServer.use(bodyParser.urlencoded({ extended: true }))
+// apiServer.use(bodyParser.json())
+// var apiRouter = express.Router()
+// var fs = require('fs')
+// apiRouter.route('/:apiName')
+// .all(function (req, res) {
+//   fs.readFile('./../mock/goods.json', 'utf8', function (err, data) {
+//     if (err) throw err
+//     var data = JSON.parse(data)
+//     if (data[req.params.apiName]) {
+//       res.json(data[req.params.apiName])
+//     } else {
+//       res.send('no such api name')
+//     }
+//   })
+// })
+//
+// apiServer.use('/goods', apiRouter);
+// apiServer.listen(config.dev.port + 1, function (err) {
+//   if (err) {
+//     console.log(err)
+//     return
+//   }
+//   console.log('Listening at http://localhost:' + (config.dev.port + 1) + '\n')
+// })
 // express
+
+// jsonServer
+// const jsonServer = require('json-server')
+// const apiServer = jsonServer.create()
+// const apiRouter = jsonServer.router('/goods.json')
+// const middlewares = jsonServer.defaults()
+//
+// // Set default middlewares (logger, static, cors and no-cache)
+// apiServer.use(middlewares)
+// apiServer.use('/goods', apiRouter)
+// apiServer.use(apiRouter)
+//
+// apiServer.listen(config.dev.port + 1, () => {
+//   console.log('JSON apiServer is running')
+// })
+// jsonServer
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -100,16 +111,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       poll: config.dev.poll,
     }
   },
-
-  // 添加mock接口数据
-  /*before (app) {
-    app.get('/api/appData',(req,res) => {
-      res.json({
-        errno:0,
-        data:appData
-      })
-    })
-  },*/
 
   plugins: [
     new webpack.DefinePlugin({
