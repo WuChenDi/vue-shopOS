@@ -53,42 +53,6 @@
                     </div>
                   </div>
                 </li>
-                <li>
-                  <div class="pic">
-                    <a href="#"><img src="/static/2.jpg" alt=""></a>
-                  </div>
-                  <div class="main">
-                    <div class="name">XX</div>
-                    <div class="price">1000</div>
-                    <div class="btn-area">
-                      <a href="javascript:;" class="btn btn--m">加入购物车</a>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="pic">
-                    <a href="#"><img src="/static/3.jpg" alt=""></a>
-                  </div>
-                  <div class="main">
-                    <div class="name">XX</div>
-                    <div class="price">500</div>
-                    <div class="btn-area">
-                      <a href="javascript:;" class="btn btn--m">加入购物车</a>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="pic">
-                    <a href="#"><img src="/static/4.jpg" alt=""></a>
-                  </div>
-                  <div class="main">
-                    <div class="name">XX</div>
-                    <div class="price">2499</div>
-                    <div class="btn-area">
-                      <a href="javascript:;" class="btn btn--m">加入购物车</a>
-                    </div>
-                  </div>
-                </li>
               </ul>
             </div>
           </div>
@@ -106,6 +70,10 @@
   import NavBread from './../components/NavBread.vue'
   import axios from 'axios'
 
+//  const axInstance = axios.create({
+//    BASE_URL: 'http://127.0.0.1:2021'
+//  });
+
   export default {
     data() {
       return {
@@ -122,12 +90,12 @@
     },
     methods: {
       getGoodsList() {
-        axios.get("/goods").then((result) => {
+        axios.get("http://127.0.0.1:2021/goods").then((result) => {
+          console.log("before init.");
           var res = result.data;
           this.goodsList = res.result;
-        })
-        app.listen(3000,function () {
-          console.log('Ready');
+        }).catch(function (error) {
+          console.log("error init." + error);
         })
       }
     }
