@@ -23,7 +23,7 @@ Project startup time is January 19, 2018（[WuChenDi](https://github.com/WuChenD
 
 #### 注意：由于涉及大量的 ES6/7 等新属性，node 需要 6.0 以上版本
 ```
-cd ImoocMall
+cd vue-ImoocMall
 
 npm install 或 cnpm install(个人比较喜欢使用后者，下载依赖模块速度较快)
 
