@@ -16,11 +16,11 @@ const portfinder = require('portfinder')
 const app = express()
 var apiRouter = express.Router();
 var goodsData = require('./../mock/goods.json');
-apiRouter.get('/goods', function (req, res, next) {
+apiRouter.get('/api/goods', function (req, res, next) {
   // console.log(goodsData);
   res.json(goodsData);
 });
-app.use(router);
+app.use(apiRouter);
 
 apiRouter.get('/',function(req,res){
   res.send('hello world')
