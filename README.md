@@ -10,7 +10,7 @@ Project startup time is January 19, 2018（[WuChenDi](https://github.com/WuChenD
 - 使用express搭建静态服务
 - Vue-Router进行路由处理
 - Vue-LazyLoad进行图片赖加载
-- .....
+- ....
 
 ## 项目已实现功能
 
