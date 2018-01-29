@@ -15,7 +15,7 @@ Project startup time is January 19, 2018（[WuChenDi](https://github.com/WuChenD
 ## 项目已实现功能
 
 1. 首页数据的展示
-2. ...
+2. ....
 
 ## 项目运行
 
