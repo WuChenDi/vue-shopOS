@@ -1,21 +1,35 @@
-# vue-shopos
+# 基于Vue2.0 + Vue-router + Vuex + Axios + ES6/7 + NodeJs + Express 实现web端(响应式)购物商城
 
-> A Vue.js project
+## 前端构架
 
-## Build Setup
+- 页面结构 - 响应式布局(HTML5 + CSS3 + JavaScript)
+- 框架(基于Vue脚手架:vue-cli)进行搭建
+- 数据请求处理框架(vue-resource或者Axios)
+- 使用express搭建静态服务
+- Vue-Router进行路由处理
+- Vue-LazyLoad进行图片赖加载
+- ...
 
-``` bash
-# install dependencies
-npm install
+## 项目已实现功能
 
-# serve with hot reload at localhost:8080
+1. 首页数据的展示
+2. ...
+
+## 项目运行
+
+通过npm安装本地服务第三方依赖模块(需要已安装[Node.js](https://nodejs.org/))
+
+#### 注意：由于涉及大量的 ES6/7 等新属性，node 需要 6.0 以上版本
+```
+cd vue-ImoocMall
+
+npm install 或 cnpm install(个人比较喜欢使用后者，下载依赖模块速度较快)
+
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
+## 总结
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+- 了解vue...
+
+## 重构项目：2018-7-10
