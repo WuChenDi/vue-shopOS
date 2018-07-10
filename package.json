@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "ejs": "^2.6.1",
     "json-loader": "^0.5.7",
     "json-server": "^0.12.1",
     "mock": "^0.1.1",
