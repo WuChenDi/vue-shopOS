@@ -118,7 +118,7 @@
     },
     methods: {
       getGoodsList() {
-        axios.get("/api/goods").then((result) => {
+        axios.get("/goods").then((result) => {
           console.log("before init.");
           var res = result.data;
           this.goodsList = res.result;

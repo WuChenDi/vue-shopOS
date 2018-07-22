@@ -13,22 +13,22 @@ const portfinder = require('portfinder')
 
 //添加mock数据
 
-const app = express()
-var apiRouter = express.Router();
-var goodsData = require('./../mock/goods.json');
-apiRouter.get('/api/goods', function (req, res, next) {
-  // console.log(goodsData);
-  res.json(goodsData);
-});
-app.use(apiRouter);
+// const app = express()
+// var apiRouter = express.Router();
+// var goodsData = require('./../mock/goods.json');
+// apiRouter.get('/api/goods', function (req, res, next) {
+//   // console.log(goodsData);
+//   res.json(goodsData);
+// });
+// app.use(apiRouter);
 
-apiRouter.get('/',function(req,res){
-  res.send('hello world')
-})
+// apiRouter.get('/',function(req,res){
+//   res.send('hello world')
+// })
 
-app.listen(config.dev.port + 1,function () {
-  console.log('Ready')
-})
+// app.listen(config.dev.port + 1,function () {
+//   console.log('Ready')
+// })
 
 // express
 // var apiServer = express()

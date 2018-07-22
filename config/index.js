@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     // proxyTable: {},
     proxyTable: {
-      '/api/': 'http://localhost:8081/'
+      // '/api/': 'http://localhost:8081/'
       // '/api/': {
       //   target: 'http://localhost:3000',
       //   changeOrigin: true,
@@ -20,6 +20,9 @@ module.exports = {
       //     '^/api/': ''
       //   }
       // }
+      '/goods': {
+        target: 'http://localhost:3000',
+      }
     },
 
     // Various Dev Server settings
